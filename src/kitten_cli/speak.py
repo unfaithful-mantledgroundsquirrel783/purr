@@ -38,7 +38,7 @@ def synthesize(
     repo_id = MODEL_REGISTRY[model]
     tts = KittenTTS(repo_id, cache_dir=str(model_dir))
 
-    audio = tts.synthesize(text, voice=voice, speed=speed, clean=clean)
+    audio = tts.generate(text, voice=voice, speed=speed, clean_text=clean)
 
     sf.write(str(output), audio, SAMPLE_RATE)
     typer.echo(f"Saved to {output}")
