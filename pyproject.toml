@@ -9,7 +9,7 @@ description = "CLI wrapper for KittenTTS — model management and speech synthes
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
-    "typer[all]>=0.12",
+    "typer>=0.12",
     "sounddevice>=0.4",
     "soundfile>=0.12",
     "kittentts @ https://github.com/KittenML/KittenTTS/releases/download/0.8.1/kittentts-0.8.1-py3-none-any.whl",

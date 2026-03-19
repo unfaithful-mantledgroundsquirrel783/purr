@@ -24,6 +24,6 @@ $UV onnxruntime soundfile numpy huggingface_hub
 $UV addict "httpx[socks]"
 
 # purr itself and its deps
-$UV "typer[all]>=0.12" "sounddevice>=0.4"
+$UV "typer>=0.12" "sounddevice>=0.4"
 $UV --no-deps \
     "purr @ git+https://github.com/newptcai/purr"
