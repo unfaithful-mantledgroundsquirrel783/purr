@@ -3,8 +3,8 @@
 ## Local setup
 
 ```bash
-uv pip install -e ".[dev]"
-# or without dev extras:
+uv venv
+source .venv/bin/activate
 uv pip install -e .
 ```
 
