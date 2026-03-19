@@ -23,6 +23,10 @@ uv pip install .
 
 > **Note:** Linux only. Requires Python ≥ 3.8.
 
+> **Warning:** KittenTTS pulls in `torch`, `triton`, and NVIDIA CUDA packages as transitive
+> dependencies, totalling **several GB** of downloads even on a CPU-only install. This is a
+> known issue with the upstream library and not something `purr` controls.
+
 ## Quick Start
 
 ```bash
