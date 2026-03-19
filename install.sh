@@ -25,5 +25,4 @@ $UV addict "httpx[socks]"
 
 # purr itself and its deps
 $UV "typer>=0.12" "sounddevice>=0.4"
-$UV --no-deps \
-    "purr @ git+https://github.com/newptcai/purr"
+$UV --no-deps -e .
