@@ -69,12 +69,13 @@ purr speak [TEXT] [OPTIONS]
 
 | Option | Short | Default | Description |
 |---|---|---|---|
-| `--model` | `-m` | `nano` | Model alias |
+| `--model` | `-m` | best installed | Model alias |
 | `--voice` | `-V` | `Jasper` | Voice name |
 | `--speed` | `-s` | `1.0` | Speed multiplier |
 | `--output` | `-o` | `/tmp/purr-<ts>.wav` | Output `.wav` file |
 | `--play` / `--no-play` | `-p` | off | Play audio after synthesis |
 | `--clean` / `--no-clean` | | on | Text preprocessing |
+| `--quiet` | `-q` | off | Suppress informational output |
 
 If `TEXT` is omitted, input is read from stdin.
 
