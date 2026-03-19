@@ -3,10 +3,10 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "kitten-cli"
+name = "purr"
 version = "0.1.0"
 description = "CLI wrapper for KittenTTS — model management and speech synthesis"
-readme = "README-KittenTTS.md"
+readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
     "typer[all]>=0.12",

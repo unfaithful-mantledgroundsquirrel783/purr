@@ -25,4 +25,4 @@ $UV onnxruntime soundfile numpy huggingface_hub
 # purr itself and its deps
 $UV "typer[all]>=0.12" "sounddevice>=0.4"
 $UV --no-deps \
-    "kitten-cli @ git+https://github.com/newptcai/purr"
+    "purr @ git+https://github.com/newptcai/purr"
