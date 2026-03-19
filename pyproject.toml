@@ -13,6 +13,8 @@ dependencies = [
     "sounddevice>=0.4",
     "soundfile>=0.12",
     "kittentts @ https://github.com/KittenML/KittenTTS/releases/download/0.8.1/kittentts-0.8.1-py3-none-any.whl",
+    "addict>=2.4",  # undeclared dep of kittentts/misaki
+    "httpx[socks]>=0.27",  # needed when a SOCKS proxy is configured
 ]
 
 [project.scripts]
