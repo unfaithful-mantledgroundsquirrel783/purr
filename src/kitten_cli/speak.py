@@ -6,8 +6,6 @@ from typing import Optional
 
 import soundfile as sf
 import typer
-from kittentts import KittenTTS  # type: ignore
-
 from kitten_cli.config import DEFAULT_MODEL, DEFAULT_SPEED, DEFAULT_VOICE, MODELS_DIR, MODEL_REGISTRY, SAMPLE_RATE
 from kitten_cli.models import install_model, is_model_downloaded
 
@@ -41,6 +39,7 @@ def synthesize(
     model_dir = MODELS_DIR / model
     repo_id = MODEL_REGISTRY[model]
     os.environ["HF_HUB_OFFLINE"] = "1"
+    from kittentts import KittenTTS  # type: ignore  # imported after HF_HUB_OFFLINE is set
     with open(os.devnull, "w") as devnull:
         redirect = contextlib.redirect_stdout(devnull) if quiet else contextlib.nullcontext()
         with redirect:

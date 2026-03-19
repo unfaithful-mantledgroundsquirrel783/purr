@@ -1,7 +1,6 @@
 import shutil
 
 import typer
-from kittentts import KittenTTS  # type: ignore
 
 from kitten_cli.config import MODEL_REGISTRY, MODELS_DIR
 
@@ -24,6 +23,7 @@ def install_model(alias: str) -> None:
     dest.mkdir(parents=True, exist_ok=True)
 
     typer.echo(f"Downloading model '{alias}' from {repo_id} ...")
+    from kittentts import KittenTTS  # type: ignore
     KittenTTS(repo_id, cache_dir=str(dest))
     typer.echo(f"Model '{alias}' installed to {dest}")
 
