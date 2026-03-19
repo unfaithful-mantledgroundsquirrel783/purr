@@ -1,3 +1,4 @@
+import contextlib
 import os
 import time
 from pathlib import Path
@@ -19,6 +20,7 @@ def synthesize(
     output: Optional[Path] = None,
     play: bool = False,
     clean: bool = True,
+    quiet: bool = False,
 ) -> Path:
     if model not in MODEL_REGISTRY:
         typer.echo(
@@ -28,7 +30,8 @@ def synthesize(
         raise typer.Exit(1)
 
     if not is_model_downloaded(model):
-        typer.echo(f"Model '{model}' not found locally. Downloading ...")
+        if not quiet:
+            typer.echo(f"Model '{model}' not found locally. Downloading ...")
         install_model(model)
 
     if output is None:
@@ -38,13 +41,16 @@ def synthesize(
     model_dir = MODELS_DIR / model
     repo_id = MODEL_REGISTRY[model]
     os.environ["HF_HUB_OFFLINE"] = "1"
-    tts = KittenTTS(repo_id, cache_dir=str(model_dir))
+    with open(os.devnull, "w") as devnull:
+        redirect = contextlib.redirect_stdout(devnull) if quiet else contextlib.nullcontext()
+        with redirect:
+            tts = KittenTTS(repo_id, cache_dir=str(model_dir))
+            audio = tts.generate(text, voice=voice, speed=speed, clean_text=clean)
     del os.environ["HF_HUB_OFFLINE"]
 
-    audio = tts.generate(text, voice=voice, speed=speed, clean_text=clean)
-
     sf.write(str(output), audio, SAMPLE_RATE)
-    typer.echo(f"Saved to {output}")
+    if not quiet:
+        typer.echo(f"Saved to {output}")
 
     if play:
         from kitten_cli.playback import play_audio_array
