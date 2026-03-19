@@ -21,6 +21,7 @@ $UV espeakng-loader num2words "phonemizer-fork" spacy
 
 # remaining kittentts deps
 $UV onnxruntime soundfile numpy huggingface_hub
+$UV addict "httpx[socks]"
 
 # purr itself and its deps
 $UV "typer[all]>=0.12" "sounddevice>=0.4"
