@@ -6,6 +6,12 @@
 # only the deps that are actually needed at runtime.
 set -euo pipefail
 
+# Ensure we're inside a virtual environment so console scripts land in PATH.
+if [ -z "${VIRTUAL_ENV:-}" ]; then
+    uv venv
+    source .venv/bin/activate
+fi
+
 UV="uv pip install"
 
 # kittentts and its direct deps — skip misaki[en] to avoid torch
