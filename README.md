@@ -53,6 +53,10 @@ purr speak "Hello, world." --play
 # Pipe text from stdin
 echo "Testing stdin input" | purr speak --play --voice Luna
 
+# Write WAV to stdout for piping into other tools
+purr speak "Hello, world." --stdout > hello.wav
+purr speak "Hello, world." --stdout | aplay -
+
 # List voices for the active model
 purr voices
 ```
@@ -82,6 +86,7 @@ purr speak [TEXT] [OPTIONS]
 | `--speed` | `-s` | `1.0` | Speed multiplier |
 | `--output` | `-o` | `/tmp/purr-<ts>.wav` | Output `.wav` file |
 | `--play` / `--no-play` | `-p` | off | Play audio after synthesis |
+| `--stdout` | | off | Write WAV audio to stdout (for piping) |
 | `--clean` / `--no-clean` | | on | Text preprocessing |
 | `--quiet` | `-q` | off | Suppress informational output |
 
