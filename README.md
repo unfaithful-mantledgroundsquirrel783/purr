@@ -19,20 +19,15 @@ cd purr
 bash install.sh
 ```
 
-`install.sh` creates a `.venv` automatically if no virtual environment is active.
-Activate it afterwards to put `purr` on your PATH:
-
-```bash
-source .venv/bin/activate
-```
+`install.sh` installs `purr` as a [uv tool](https://docs.astral.sh/uv/guides/tools/), so it is
+available on your PATH immediately — no virtual environment activation needed.
 
 ### Simple install (includes torch/CUDA bloat)
 
 ```bash
 git clone https://github.com/newptcai/purr
 cd purr
-uv venv && source .venv/bin/activate
-uv pip install -e .
+uv tool install .
 ```
 
 ## Quick Start
